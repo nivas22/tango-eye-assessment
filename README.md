@@ -8,7 +8,7 @@ This is a boilerplate to use ReactJS in a project.
  Client side application libraries:
 - [ReactJS] - The state based framework for your Views
 - [React Router v4] - For routing to different paths
-- [NVD3, REACT CHART JS] - For showing charts
+- [REACT CHART JS] - For showing charts
 
 # Installation
 Node Version: v12.20.0^
@@ -23,5 +23,3 @@ To develop your own react application, you can take advantage of React Hot Loade
 
 Now you can access your react application on http://localhost:3000
 
-## Screen Shots
-![ScreenShot](/screenshots/Bar Chart - Mobile.PNG)
