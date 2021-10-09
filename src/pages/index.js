@@ -1,44 +1,46 @@
 import React, { Fragment } from 'react';
 import {Row, Col, Card } from 'react-bootstrap';
-import NVD3Chart from 'react-nvd3';
+import { Bar } from 'react-chartjs-2';
 
+const data = {
+  labels: ['Apr 2021', 'May 2021', 'Jun 2021', 'Jul 2021', 'Aug 2021'],
+  datasets: [
+    {
+      label: '# of Votes',
+      data: [10000, 13300, 17400, 15300, 19600],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)'
+      ],
+      borderWidth: 1,
+    },
+  ],
+};
 
-const datum = [
-  {
-      key: "Cumulative Return",
-      values: [
-        {
-            "month": "Apr 2021",
-            "customer": 10000,
-            "color": "#04a9f5"   
+const options = {
+  scales: {
+    yAxes: [
+      {
+        ticks: {
+          beginAtZero: true,
         },
-        {
-            "month": "May 2021",
-            "customer": 13200,
-            "color": "#ff8a65"   
-        },
-        {
-            "month": "Jun 2021",
-            "customer": 17400,
-            "color": "#69CEC6"   
-        },    
-        {
-            "month": "Jul 2021",
-            "customer": 15300,
-            "color": "#a389d4"   
-        },
-        {
-            "month": "Aug 2021",
-            "customer": 19600,
-            "color": "#FE8A7D"   
-        }
-      ]
-  }
-];
+      },
+    ],
+  },
+};
 
-const Home = () => {
-  return (
-    <Fragment>
+const Home = () => (
+<Fragment>
       <Row>
         <Col md={8} >
             <Card>
@@ -46,13 +48,12 @@ const Home = () => {
                     <Card.Title as="h5">Month vs Customer count</Card.Title>
                 </Card.Header>
                 <Card.Body>
-                  <NVD3Chart tooltip={{enabled: true}} type="discreteBarChart" datum={datum} x="month" y="customer" height={500} width={700} showValues />
+                <Bar data={data} options={options} />
                 </Card.Body>
             </Card>
           </Col>
         </Row>
     </Fragment>
-  );
-};
+);
 
 export default Home;

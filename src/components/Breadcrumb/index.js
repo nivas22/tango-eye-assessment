@@ -54,7 +54,7 @@ class Breadcrumb extends Component {
             );
         }
 
-        debugger;
+  
         if (this.state.item && this.state.item.type === 'item') {
             title = this.state.item.title;
             item = (
