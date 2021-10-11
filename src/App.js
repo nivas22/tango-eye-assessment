@@ -8,7 +8,7 @@ import './app.scss';
 import Aux from "./hoc/_Aux";
 import Home from './pages';
 import PieChart from './pages/Pie';
-import LineChart from './pages/LineChart';
+import LineChart from './pages/LineChart1';
 import ScatterChart from './pages/ScatterChart';
 
 function App() {
